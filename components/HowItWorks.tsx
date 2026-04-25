@@ -117,7 +117,18 @@ const bgCapsules = [
 
 export default function HowItWorks() {
   return (
-    <section id="how" className="relative overflow-hidden bg-white py-20 sm:py-28">
+    <section id="how" className="relative overflow-hidden bg-ink-50 py-20 sm:py-28">
+      {/* Dot grid pattern */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage: "radial-gradient(circle, #c8ccd6 1px, transparent 1px)",
+          backgroundSize: "28px 28px",
+          opacity: 0.45,
+        }}
+      />
+
       {/* Floating capsules */}
       {bgCapsules.map((c, i) => (
         <div

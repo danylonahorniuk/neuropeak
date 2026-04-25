@@ -39,3 +39,10 @@ next-env.d.ts
 # IDE
 .vscode/
 .idea/
+
+# Claude
+.claude/
+settings.local.json
+
+# Root-level image duplicates
+/Neuro-Peak.png

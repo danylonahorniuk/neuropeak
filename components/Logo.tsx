@@ -4,29 +4,54 @@ type LogoProps = {
 
 export default function Logo({ variant = "light" }: LogoProps) {
   const textColor = variant === "dark" ? "text-white" : "text-ink-900";
+
   return (
-    <span className={`inline-flex items-center gap-2 ${textColor}`}>
-      <span className="relative inline-flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-brand-400 to-brand-600 shadow-soft">
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          className="h-5 w-5 text-white"
-          aria-hidden
-        >
-          <path
-            d="M12 3c-3.5 0-6 2.5-6 6 0 1.8.8 3.4 2 4.5V18a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4.5c1.2-1.1 2-2.7 2-4.5 0-3.5-2.5-6-6-6Z"
-            stroke="currentColor"
-            strokeWidth="1.7"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M9 20.5h6"
-            stroke="currentColor"
-            strokeWidth="1.7"
-            strokeLinecap="round"
-          />
-        </svg>
-      </span>
+    <span className={`inline-flex items-center gap-2.5 ${textColor}`}>
+      {/* Icon: N inscribed in capsule + lightbulb base */}
+      <svg
+        viewBox="0 0 34 46"
+        fill="none"
+        className="h-8 w-auto flex-shrink-0 text-brand-500"
+        aria-hidden
+      >
+        {/* Left N leg + capsule top arc */}
+        <path
+          d="M6 30 L6 14 C6 4 28 4 28 14"
+          stroke="currentColor"
+          strokeWidth="2.3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        {/* N diagonal */}
+        <path
+          d="M6 14 L28 28"
+          stroke="currentColor"
+          strokeWidth="2.3"
+          strokeLinecap="round"
+        />
+        {/* Right N leg + lightbulb bottom */}
+        <path
+          d="M28 14 L28 30 Q28 37 17 37 Q6 37 6 30"
+          stroke="currentColor"
+          strokeWidth="2.3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        {/* Lightbulb base lines */}
+        <path
+          d="M11 40 L23 40"
+          stroke="currentColor"
+          strokeWidth="2.3"
+          strokeLinecap="round"
+        />
+        <path
+          d="M13 44 L21 44"
+          stroke="currentColor"
+          strokeWidth="2.3"
+          strokeLinecap="round"
+        />
+      </svg>
+
       <span className="text-lg font-bold tracking-tight">NeuroPeak</span>
     </span>
   );

@@ -8,36 +8,39 @@ export default function Logo({ variant = "light" }: LogoProps) {
   return (
     <span className={`inline-flex items-center gap-2.5 ${textColor}`}>
       {/*
-        Icon: N inscribed in a tilted capsule that transitions into a lightbulb.
-        Base shape is drawn vertically, then rotated ~22° clockwise.
-        ViewBox has padding to prevent clipping after rotation.
+        Icon: narrow pill capsule (2:1 height-to-width) tilted 22° clockwise.
+        N letterform is inscribed — two sides of capsule serve as vertical legs,
+        a single diagonal stroke forms the N cross. Below the capsule, three
+        narrowing horizontal bars create the lightbulb-base / screw effect.
+        Entire group drawn vertically then rotated so nothing clips.
       */}
       <svg
-        viewBox="-6 -6 76 76"
+        viewBox="-6 -4 72 88"
         fill="none"
         className="h-9 w-auto flex-shrink-0"
         aria-hidden
       >
         <g transform="rotate(22, 32, 28)">
-          {/* Capsule outline — left N leg → capsule arc → right N leg → lightbulb curve */}
-          <path
-            d="M8 42 L8 16 C8 3 56 3 56 16 L56 42 Q56 51 32 51 Q8 51 8 42 Z"
+          {/* Pill / capsule — narrow 24×48, rx=12 gives perfect semicircle ends */}
+          <rect
+            x="20" y="4"
+            width="24" height="48"
+            rx="12" ry="12"
             stroke="#3ca366"
-            strokeWidth="3.2"
-            strokeLinejoin="round"
+            strokeWidth="3"
             fill="none"
           />
-          {/* N diagonal */}
-          <path
-            d="M8 16 L56 42"
+          {/* N diagonal — top-left inflection (20,16) → bottom-right inflection (44,40) */}
+          <line
+            x1="20" y1="16" x2="44" y2="40"
             stroke="#3ca366"
-            strokeWidth="3.2"
+            strokeWidth="3"
             strokeLinecap="round"
           />
-          {/* Lightbulb base lines (widest → narrowest) */}
-          <path d="M16 55 L48 55" stroke="#3ca366" strokeWidth="3.2" strokeLinecap="round" />
-          <path d="M19 60 L45 60" stroke="#3ca366" strokeWidth="3.2" strokeLinecap="round" />
-          <path d="M22 65 L42 65" stroke="#3ca366" strokeWidth="3.2" strokeLinecap="round" />
+          {/* Lightbulb base lines: widest → narrowest, spaced 5px apart */}
+          <line x1="22" y1="57" x2="42" y2="57" stroke="#3ca366" strokeWidth="3" strokeLinecap="round" />
+          <line x1="25" y1="62" x2="39" y2="62" stroke="#3ca366" strokeWidth="3" strokeLinecap="round" />
+          <line x1="28" y1="67" x2="36" y2="67" stroke="#3ca366" strokeWidth="3" strokeLinecap="round" />
         </g>
       </svg>
 

@@ -4,10 +4,36 @@ import { useState } from "react";
 
 export default function LeadForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+
+    const form = e.currentTarget;
+    const data = {
+      name:    (form.elements.namedItem("name")    as HTMLInputElement).value,
+      phone:   (form.elements.namedItem("phone")   as HTMLInputElement).value,
+      email:   (form.elements.namedItem("email")   as HTMLInputElement).value,
+      comment: (form.elements.namedItem("comment") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch("/api/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) throw new Error("Server error");
+      setSubmitted(true);
+    } catch {
+      setError("Щось пішло не так. Спробуйте ще раз або зателефонуйте нам.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -148,18 +174,28 @@ export default function LeadForm() {
                     />
                   </div>
 
-                  <button type="submit" className="btn-primary w-full justify-center py-4 text-base">
-                    Оформити заявку
-                    <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" aria-hidden>
-                      <path
-                        d="M5 12h14M13 6l6 6-6 6"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="btn-primary w-full justify-center py-4 text-base disabled:opacity-60 disabled:cursor-not-allowed"
+                  >
+                    {loading ? "Відправляємо…" : "Оформити заявку"}
+                    {!loading && (
+                      <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" aria-hidden>
+                        <path
+                          d="M5 12h14M13 6l6 6-6 6"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    )}
                   </button>
+
+                  {error && (
+                    <p className="text-center text-xs text-red-500">{error}</p>
+                  )}
 
                   <p className="text-center text-[11px] text-ink-500">
                     Натискаючи кнопку, ви погоджуєтесь з обробкою персональних даних.

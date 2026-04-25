@@ -17,7 +17,7 @@ export default function Logo({ variant = "light" }: LogoProps) {
       <svg
         viewBox="-4 0 68 80"
         fill="none"
-        className="h-9 w-auto flex-shrink-0"
+        className="h-11 w-auto flex-shrink-0"
         aria-hidden
       >
         <g transform="rotate(22, 32, 32)">
@@ -44,7 +44,7 @@ export default function Logo({ variant = "light" }: LogoProps) {
         </g>
       </svg>
 
-      <span className="text-lg font-bold tracking-tight">NeuroPeak</span>
+      <span className="text-xl font-bold tracking-tight">NeuroPeak</span>
     </span>
   );
 }

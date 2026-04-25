@@ -16,12 +16,13 @@ export async function POST(req: NextRequest) {
 
     const response = await fetch(scriptUrl, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "text/plain" },
       body: JSON.stringify({ name, phone, email, comment }),
+      redirect: "follow",
     });
 
-    const data = await response.json();
-    return NextResponse.json(data);
+    const result = await response.json();
+    return NextResponse.json(result);
   } catch (err) {
     console.error("Submit error:", err);
     return NextResponse.json({ error: "Failed to submit" }, { status: 500 });

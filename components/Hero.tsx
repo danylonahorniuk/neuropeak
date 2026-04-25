@@ -8,10 +8,7 @@ export default function Hero() {
 
       <div className="container-page relative grid items-center gap-10 py-16 sm:py-20 lg:grid-cols-2 lg:py-28">
         <div className="animate-fadeUp">
-          <span className="chip">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
-            Біо-оптимізоване фокусування
-          </span>
+          <span className="section-eyebrow">Біо-оптимізоване фокусування</span>
 
           <h1 className="mt-5 text-balance text-4xl font-extrabold leading-[1.05] tracking-tight text-ink-900 sm:text-5xl lg:text-6xl">
             Розум працює краще,{" "}

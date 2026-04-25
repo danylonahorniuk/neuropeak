@@ -1,3 +1,5 @@
+import FadeIn from "@/components/FadeIn";
+
 /* ── Step visuals (light bg versions) ── */
 
 function FormVisual() {
@@ -141,7 +143,7 @@ export default function HowItWorks() {
 
       <div className="container-page relative">
         {/* Heading */}
-        <div className="mx-auto max-w-xl text-center">
+        <FadeIn className="mx-auto max-w-xl text-center">
           <span className="section-eyebrow">Як це працює</span>
           <h2 className="mt-3 section-title text-balance">
             Три прості кроки до щоденного фокусу
@@ -149,7 +151,7 @@ export default function HowItWorks() {
           <p className="mt-4 text-sm text-ink-500 sm:text-base">
             Від моменту заявки до першої капсули — швидко і зрозуміло.
           </p>
-        </div>
+        </FadeIn>
 
         {/* Timeline */}
         <div className="relative mx-auto mt-16 max-w-2xl">
@@ -165,7 +167,7 @@ export default function HowItWorks() {
 
           <ol className="space-y-14">
             {steps.map((s, i) => (
-              <li key={s.step} className="relative flex items-start gap-8">
+              <FadeIn key={s.step} delay={i * 120} className="relative flex items-start gap-8">
                 {/* Step dot + number */}
                 <div className="relative z-10 flex-shrink-0">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-brand-300 bg-white shadow-soft ring-4 ring-white">
@@ -181,7 +183,7 @@ export default function HowItWorks() {
                   </div>
                   <div className="hidden flex-shrink-0 sm:block">{s.visual}</div>
                 </div>
-              </li>
+              </FadeIn>
             ))}
           </ol>
         </div>

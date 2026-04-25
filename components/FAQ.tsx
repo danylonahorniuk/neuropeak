@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import FadeIn from "@/components/FadeIn";
 
 const faqs = [
   {
@@ -32,7 +33,7 @@ export default function FAQ() {
     <section id="faq" className="section">
       <div className="container-page">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr]">
-          <div>
+          <FadeIn>
             <span className="section-eyebrow">FAQ</span>
             <h2 className="mt-3 section-title text-balance">
               Часті запитання
@@ -44,8 +45,9 @@ export default function FAQ() {
             <a href="#lead" className="btn-ghost mt-6">
               Залишити питання
             </a>
-          </div>
+          </FadeIn>
 
+          <FadeIn delay={100}>
           <ul className="divide-y divide-ink-100 rounded-2xl border border-ink-100 bg-white shadow-card">
             {faqs.map((f, i) => {
               const isOpen = openIdx === i;
@@ -89,6 +91,7 @@ export default function FAQ() {
               );
             })}
           </ul>
+          </FadeIn>
         </div>
       </div>
     </section>

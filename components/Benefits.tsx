@@ -71,6 +71,8 @@ const items = [
   },
 ];
 
+import FadeIn from "@/components/FadeIn";
+
 function MoleculeDecor() {
   return (
     <svg
@@ -96,27 +98,26 @@ export default function Benefits() {
   return (
     <section id="benefits" className="section bg-surface">
       <div className="container-page">
-        <div className="flex flex-col items-start justify-between gap-4 lg:flex-row lg:items-end">
-          <div className="max-w-2xl">
-            <span className="section-eyebrow">Переваги</span>
-            <h2 className="mt-3 section-title text-balance">
-              Кілька причин, чому NeuroPeak працює на вас
-            </h2>
+        <FadeIn>
+          <div className="flex flex-col items-start justify-between gap-4 lg:flex-row lg:items-end">
+            <div className="max-w-2xl">
+              <span className="section-eyebrow">Переваги</span>
+              <h2 className="mt-3 section-title text-balance">
+                Кілька причин, чому NeuroPeak працює на вас
+              </h2>
+            </div>
+            <p className="max-w-sm text-sm text-ink-500">
+              Ми оптимізували кожну інгредієнт, щоб ви могли працювати на межі
+              своєї форми — без побічних ефектів різких стимулянтів.
+            </p>
           </div>
-          <p className="max-w-sm text-sm text-ink-500">
-            Ми оптимізували кожну інгредієнт, щоб ви могли працювати на межі
-            своєї форми — без побічних ефектів різких стимулянтів.
-          </p>
-        </div>
+        </FadeIn>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((it, i) => (
+            <FadeIn key={it.title} delay={i * 90}>
             <article
-              key={it.title}
-              className={`group relative overflow-hidden rounded-2xl border border-ink-100 bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 ${it.borderHover} hover:shadow-cardHover`}
-              style={{
-                animationDelay: `${i * 60}ms`,
-              }}
+              className={`group relative overflow-hidden rounded-2xl border border-ink-100 bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 ${it.borderHover} hover:shadow-cardHover h-full`}
             >
               {/* Top gradient band */}
               <div
@@ -166,6 +167,7 @@ export default function Benefits() {
                 className="absolute inset-x-6 bottom-0 h-px scale-x-0 bg-gradient-to-r from-brand-300 to-transparent transition-transform duration-500 group-hover:scale-x-100"
               />
             </article>
+            </FadeIn>
           ))}
         </div>
       </div>

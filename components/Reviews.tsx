@@ -1,3 +1,5 @@
+import FadeIn from "@/components/FadeIn";
+
 const reviews = [
   {
     name: "Олександр К.",
@@ -59,7 +61,7 @@ export default function Reviews() {
   return (
     <section id="reviews" className="section bg-surface">
       <div className="container-page">
-        <div className="mx-auto max-w-2xl text-center">
+        <FadeIn className="mx-auto max-w-2xl text-center">
           <span className="section-eyebrow">Відгуки</span>
           <h2 className="mt-3 section-title text-balance">
             Справжні історії від наших користувачів
@@ -67,13 +69,13 @@ export default function Reviews() {
           <p className="mt-4 text-pretty text-sm text-ink-500 sm:text-base">
             Люди, які з першого погляду, обирають NeuroPeak.
           </p>
-        </div>
+        </FadeIn>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {reviews.map((r) => (
+          {reviews.map((r, i) => (
+            <FadeIn key={r.name} delay={i * 70}>
             <article
-              key={r.name}
-              className="card card-hover flex flex-col"
+              className="card card-hover flex flex-col h-full"
             >
               <Stars />
               <p className="mt-4 flex-1 text-sm leading-relaxed text-ink-700">
@@ -95,6 +97,7 @@ export default function Reviews() {
                 </div>
               </div>
             </article>
+            </FadeIn>
           ))}
         </div>
       </div>

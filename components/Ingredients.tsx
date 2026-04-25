@@ -1,3 +1,5 @@
+import FadeIn from "@/components/FadeIn";
+
 const ingredients = [
   {
     code: "01",
@@ -30,7 +32,7 @@ export default function Ingredients() {
     <section id="ingredients" className="section">
       <div className="container-page">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start">
-          <div className="lg:sticky lg:top-24">
+          <FadeIn className="lg:sticky lg:top-24">
             <span className="section-eyebrow">Склад</span>
             <h2 className="mt-3 section-title text-balance">
               Без «запатентованих сумішей»
@@ -67,12 +69,12 @@ export default function Ingredients() {
                 </div>
               </div>
             </div>
-          </div>
+          </FadeIn>
 
           <ul className="space-y-3">
-            {ingredients.map((ing) => (
+            {ingredients.map((ing, i) => (
+              <FadeIn key={ing.code} delay={i * 80}>
               <li
-                key={ing.code}
                 className="group grid grid-cols-[auto_1fr_auto] items-center gap-4 rounded-2xl border border-ink-100 bg-white p-5 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-200 hover:shadow-cardHover sm:p-6"
               >
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-ink-900 text-xs font-bold text-white transition-colors group-hover:bg-brand-600">
@@ -106,6 +108,7 @@ export default function Ingredients() {
                   />
                 </svg>
               </li>
+              </FadeIn>
             ))}
           </ul>
         </div>

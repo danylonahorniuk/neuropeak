@@ -1,3 +1,5 @@
+import FadeIn from "@/components/FadeIn";
+
 const cards = [
   {
     title: "Фокус без зайвого шуму",
@@ -108,7 +110,7 @@ export default function About() {
       <div className="container-page">
         {/* 2-col: text + capsule visual */}
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div>
+          <FadeIn>
             <span className="section-eyebrow">Про продукт</span>
             <h2 className="mt-3 section-title text-balance">
               Приємно боротися зі своїм мозком?
@@ -118,20 +120,24 @@ export default function About() {
               створений для щоденників — тих, хто хоче залишатися зібраним
               довше без різких стимулянтів.
             </p>
-          </div>
-          <CapsuleScene />
+          </FadeIn>
+          <FadeIn delay={150}>
+            <CapsuleScene />
+          </FadeIn>
         </div>
 
         {/* 3 cards */}
         <div className="mt-14 grid gap-5 md:grid-cols-3">
-          {cards.map((c) => (
-            <article key={c.title} className="card card-hover">
-              <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
-                {c.icon}
-              </div>
-              <h3 className="text-lg font-semibold text-ink-900">{c.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-500">{c.text}</p>
-            </article>
+          {cards.map((c, i) => (
+            <FadeIn key={c.title} delay={i * 100}>
+              <article className="card card-hover h-full">
+                <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+                  {c.icon}
+                </div>
+                <h3 className="text-lg font-semibold text-ink-900">{c.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-500">{c.text}</p>
+              </article>
+            </FadeIn>
           ))}
         </div>
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import FadeIn from "@/components/FadeIn";
 
 export default function LeadForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -39,7 +40,7 @@ export default function LeadForm() {
   return (
     <section id="lead" className="section bg-surface">
       <div className="container-page">
-        <div className="mx-auto max-w-5xl">
+        <FadeIn className="mx-auto max-w-5xl">
           <div className="grid gap-10 overflow-hidden rounded-[2rem] border border-ink-100 bg-white shadow-card lg:grid-cols-[1fr_1.1fr]">
             {/* Left: info */}
             <div className="flex flex-col justify-center bg-gradient-to-br from-brand-600 to-brand-700 p-8 text-white sm:p-10 lg:p-12">
@@ -204,7 +205,7 @@ export default function LeadForm() {
               )}
             </div>
           </div>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );

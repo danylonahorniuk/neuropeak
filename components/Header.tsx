@@ -7,19 +7,38 @@ import { navLinks } from "@/lib/navigation";
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
+  // Glass effect on scroll
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Active section via IntersectionObserver
+  useEffect(() => {
+    const ids = navLinks.map((l) => l.href.slice(1)); // strip "#"
+    const elements = ids.map((id) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveSection(entry.target.id);
+        });
+      },
+      // Trigger when section crosses ~30% from top of viewport
+      { rootMargin: "-30% 0px -60% 0px", threshold: 0 }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
+    return () => { document.body.style.overflow = ""; };
   }, [open]);
 
   const close = () => setOpen(false);
@@ -28,7 +47,7 @@ export default function Header() {
     <header
       className={`sticky top-0 z-40 w-full transition-all duration-300 ${
         scrolled
-          ? "border-b border-ink-100/70 bg-white/85 backdrop-blur-md"
+          ? "border-b border-ink-100/60 bg-white/80 shadow-[0_1px_20px_rgba(15,23,42,0.07)] backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
@@ -38,11 +57,26 @@ export default function Header() {
         </a>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
-          {navLinks.map((l) => (
-            <a key={l.href} href={l.href} className="nav-link">
-              {l.label}
-            </a>
-          ))}
+          {navLinks.map((l) => {
+            const isActive = activeSection === l.href.slice(1);
+            return (
+              <a
+                key={l.href}
+                href={l.href}
+                className={`relative text-sm font-medium transition-colors ${
+                  isActive
+                    ? "text-brand-600"
+                    : "text-ink-700 hover:text-brand-600"
+                }`}
+              >
+                {l.label}
+                {/* Active underline dot */}
+                {isActive && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-brand-500" />
+                )}
+              </a>
+            );
+          })}
         </nav>
 
         <div className="hidden lg:block">

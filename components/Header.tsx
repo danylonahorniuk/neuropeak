@@ -54,7 +54,7 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="container-page flex h-16 items-center justify-between">
+      <div className="container-page flex h-20 items-center justify-between">
         <a href="#top" className="shrink-0" aria-label="NeuroPeak home">
           <Logo />
         </a>

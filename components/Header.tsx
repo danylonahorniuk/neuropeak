@@ -117,7 +117,9 @@ export default function Header() {
       </div>
 
       <div
-        className={`lg:hidden ${open ? "block" : "hidden"} border-t border-ink-100 bg-white`}
+        className={`lg:hidden overflow-hidden border-t border-ink-100 bg-white transition-all duration-300 ease-in-out ${
+          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        }`}
       >
         <nav
           className="container-page flex flex-col gap-1 py-4"

@@ -117,10 +117,11 @@ export default function Header() {
       </div>
 
       <div
-        className={`lg:hidden overflow-hidden border-t border-ink-100 bg-white transition-all duration-300 ease-in-out ${
-          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        className={`lg:hidden grid transition-[grid-template-rows] duration-300 ease-in-out ${
+          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
         }`}
       >
+      <div className="overflow-hidden border-t border-ink-100 bg-white">
         <nav
           className="container-page flex flex-col gap-1 py-4"
           aria-label="Mobile"
@@ -139,6 +140,7 @@ export default function Header() {
             Замовити
           </a>
         </nav>
+      </div>
       </div>
     </header>
   );

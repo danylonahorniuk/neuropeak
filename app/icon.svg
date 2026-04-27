@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .bg  { fill: #3ca366; }
+    .fg  { stroke: #ffffff; fill: none; }
+    .mid { stroke: rgba(255,255,255,0.55); fill: none; }
+    @media (prefers-color-scheme: dark) {
+      .bg  { fill: #111a14; }
+      .fg  { stroke: #3ca366; fill: none; }
+      .mid { stroke: rgba(60,163,102,0.5); fill: none; }
+    }
+  </style>
+
+  <!-- Rounded square background -->
+  <rect width="32" height="32" rx="7" class="bg"/>
+
+  <!-- Rotated pill capsule centred at (16,16) -->
+  <g transform="translate(16,16) rotate(22) translate(-6,-10)">
+    <!-- Outer pill outline -->
+    <rect x="0" y="0" width="12" height="20" rx="6" stroke-width="2.2" class="fg"/>
+    <!-- Middle dividing line -->
+    <line x1="0" y1="10" x2="12" y2="10" stroke-width="1.6" class="mid"/>
+  </g>
+</svg>

@@ -19,6 +19,13 @@ export const metadata: Metadata = {
       "Преміальна формула для ясності мислення, концентрації та стабільної енергії.",
     type: "website",
     locale: "uk_UA",
+    url: "https://neuropeak-gilt.vercel.app",
+    siteName: "NeuroPeak",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NeuroPeak — добавка для фокусу та продуктивності",
+    description: "Преміальна формула для ясності мислення, концентрації та стабільної енергії.",
   },
   robots: { index: true, follow: true },
 };

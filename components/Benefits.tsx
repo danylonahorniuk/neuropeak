@@ -1,12 +1,15 @@
+import FadeIn from "@/components/FadeIn";
+
 const items = [
   {
     title: "Глибокий фокус",
     text: "Допомагає утримувати увагу на завданнях — без дрейфу між вкладками та нотатками.",
     ingredient: "L-Theanine",
-    accent: "from-brand-100 to-brand-50",
-    glowColor: "rgba(60,163,102,0.12)",
-    borderHover: "hover:border-brand-300",
-    tagCls: "bg-brand-50 text-brand-700 ring-brand-200",
+    topColor: "from-brand-500/30 via-brand-500/10 to-transparent",
+    glowColor: "rgba(60,163,102,0.18)",
+    iconBg: "bg-brand-500/20 ring-brand-500/30 text-brand-400",
+    tagCls: "border-brand-500/30 bg-brand-500/10 text-brand-400",
+    moleculeColor: "text-brand-400",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
         <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.8" />
@@ -19,10 +22,11 @@ const items = [
     title: "Стабільна енергія",
     text: "Нікого крешів і різких скачків. Плавна енергія, якої вистачає на весь робочий день.",
     ingredient: "Bacopa Monnieri",
-    accent: "from-mint-100 to-mint-50",
-    glowColor: "rgba(16,185,129,0.10)",
-    borderHover: "hover:border-mint-200",
-    tagCls: "bg-mint-50 text-emerald-700 ring-mint-200",
+    topColor: "from-amber-500/30 via-amber-500/10 to-transparent",
+    glowColor: "rgba(245,158,11,0.15)",
+    iconBg: "bg-amber-500/20 ring-amber-500/30 text-amber-400",
+    tagCls: "border-amber-500/30 bg-amber-500/10 text-amber-400",
+    moleculeColor: "text-amber-400",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
         <path
@@ -38,10 +42,11 @@ const items = [
     title: "Ясність мислення",
     text: "Підтримує те відчуття, коли думки стають чіткими, а ви — впевненими у рішеннях.",
     ingredient: "Rhodiola Rosea",
-    accent: "from-sky-100 to-sky-50",
-    glowColor: "rgba(56,189,248,0.10)",
-    borderHover: "hover:border-sky-200",
-    tagCls: "bg-sky-50 text-sky-700 ring-sky-200",
+    topColor: "from-sky-500/30 via-sky-500/10 to-transparent",
+    glowColor: "rgba(56,189,248,0.15)",
+    iconBg: "bg-sky-500/20 ring-sky-500/30 text-sky-400",
+    tagCls: "border-sky-500/30 bg-sky-500/10 text-sky-400",
+    moleculeColor: "text-sky-400",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
         <path
@@ -58,10 +63,11 @@ const items = [
     title: "Щоденний формат",
     text: "Одна капсула зранку з їжею — і ви вже у робочому режимі. Без складних схем.",
     ingredient: "1 capsule / day",
-    accent: "from-amber-100 to-amber-50",
-    glowColor: "rgba(245,158,11,0.10)",
-    borderHover: "hover:border-amber-200",
-    tagCls: "bg-amber-50 text-amber-700 ring-amber-200",
+    topColor: "from-violet-500/30 via-violet-500/10 to-transparent",
+    glowColor: "rgba(167,139,250,0.15)",
+    iconBg: "bg-violet-500/20 ring-violet-500/30 text-violet-400",
+    tagCls: "border-violet-500/30 bg-violet-500/10 text-violet-400",
+    moleculeColor: "text-violet-400",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
         <rect x="3" y="8" width="18" height="8" rx="4" stroke="currentColor" strokeWidth="1.8" />
@@ -71,14 +77,12 @@ const items = [
   },
 ];
 
-import FadeIn from "@/components/FadeIn";
-
-function MoleculeDecor() {
+function MoleculeDecor({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 48 48"
       fill="none"
-      className="absolute right-3 top-3 h-12 w-12 opacity-[0.07]"
+      className={`absolute right-3 top-3 h-14 w-14 opacity-[0.18] ${className ?? ""}`}
       aria-hidden
     >
       <circle cx="24" cy="24" r="6" stroke="currentColor" strokeWidth="1.5" />
@@ -116,55 +120,54 @@ export default function Benefits() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((it, i) => (
             <FadeIn key={it.title} delay={i * 90}>
-            <article
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand-500/40 hover:bg-white/8 h-full"
-            >
-              {/* Top gradient band */}
-              <div
-                className={`absolute inset-x-0 top-0 h-28 bg-gradient-to-b ${it.accent} opacity-10`}
-                aria-hidden
-              />
+              <article className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 h-full">
 
-              {/* Glow on hover */}
-              <div
-                className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                style={{
-                  background: `radial-gradient(ellipse at 50% 0%, ${it.glowColor} 0%, transparent 70%)`,
-                }}
-                aria-hidden
-              />
+                {/* Colored top gradient band */}
+                <div
+                  className={`absolute inset-x-0 top-0 h-32 bg-gradient-to-b ${it.topColor}`}
+                  aria-hidden
+                />
 
-              {/* Molecule decoration */}
-              <MoleculeDecor />
+                {/* Glow on hover */}
+                <div
+                  className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  style={{
+                    background: `radial-gradient(ellipse at 50% 0%, ${it.glowColor} 0%, transparent 65%)`,
+                  }}
+                  aria-hidden
+                />
 
-              <div className="relative">
-                {/* Icon */}
-                <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-brand-400 ring-1 ring-white/10">
-                  {it.icon}
+                {/* Molecule decoration — colored per card */}
+                <MoleculeDecor className={it.moleculeColor} />
+
+                <div className="relative">
+                  {/* Icon — unique color per card */}
+                  <div className={`inline-flex h-11 w-11 items-center justify-center rounded-xl ring-1 ${it.iconBg}`}>
+                    {it.icon}
+                  </div>
+
+                  <h3 className="mt-4 text-lg font-semibold text-white">
+                    {it.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-white/50">
+                    {it.text}
+                  </p>
+
+                  {/* Ingredient tag — colored per card */}
+                  <div className="mt-5 flex items-center gap-1.5">
+                    <span className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-0.5 text-[11px] font-medium ${it.tagCls}`}>
+                      <span className="h-1 w-1 rounded-full bg-current opacity-70" />
+                      {it.ingredient}
+                    </span>
+                  </div>
                 </div>
 
-                <h3 className="mt-4 text-lg font-semibold text-white">
-                  {it.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-white/50">
-                  {it.text}
-                </p>
-
-                {/* Ingredient tag */}
-                <div className="mt-5 flex items-center gap-1.5">
-                  <span className="inline-flex items-center gap-1 rounded-full border border-brand-500/30 bg-brand-500/10 px-2.5 py-0.5 text-[11px] font-medium text-brand-400">
-                    <span className="h-1 w-1 rounded-full bg-current opacity-70" />
-                    {it.ingredient}
-                  </span>
-                </div>
-              </div>
-
-              {/* Bottom line on hover */}
-              <div
-                aria-hidden
-                className="absolute inset-x-6 bottom-0 h-px scale-x-0 bg-gradient-to-r from-brand-400 to-transparent transition-transform duration-500 group-hover:scale-x-100"
-              />
-            </article>
+                {/* Bottom accent line on hover */}
+                <div
+                  aria-hidden
+                  className="absolute inset-x-6 bottom-0 h-px scale-x-0 bg-gradient-to-r from-current to-transparent transition-transform duration-500 group-hover:scale-x-100 opacity-40"
+                />
+              </article>
             </FadeIn>
           ))}
         </div>

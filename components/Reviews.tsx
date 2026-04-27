@@ -59,41 +59,41 @@ function Stars() {
 
 export default function Reviews() {
   return (
-    <section id="reviews" className="section bg-surface">
-      <div className="container-page">
-        <FadeIn className="mx-auto max-w-2xl text-center">
-          <span className="section-eyebrow">Відгуки</span>
-          <h2 className="mt-3 section-title text-balance">
+    <section id=”reviews” className=”section bg-ink-950”>
+      <div className=”container-page”>
+        <FadeIn className=”mx-auto max-w-2xl text-center”>
+          <span className=”section-eyebrow !text-brand-400”>Відгуки</span>
+          <h2 className=”mt-3 section-title text-balance !text-white”>
             Справжні історії від наших користувачів
           </h2>
-          <p className="mt-4 text-pretty text-sm text-ink-500 sm:text-base">
+          <p className=”mt-4 text-pretty text-sm text-white/50 sm:text-base”>
             Люди, які з першого погляду, обирають NeuroPeak.
           </p>
         </FadeIn>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className=”mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3”>
           {reviews.map((r, i) => (
             <FadeIn key={r.name} delay={i * 70}>
             <article
-              className="card card-hover flex flex-col h-full"
+              className=”flex flex-col h-full rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/8”
             >
               <Stars />
-              <p className="mt-4 flex-1 text-sm leading-relaxed text-ink-700">
+              <p className=”mt-4 flex-1 text-sm leading-relaxed text-white/70”>
                 “{r.text}”
               </p>
-              <div className="mt-5 flex items-center gap-3 border-t border-ink-100 pt-4">
+              <div className=”mt-5 flex items-center gap-3 border-t border-white/10 pt-4”>
                 <span
                   aria-hidden
                   style={{ background: r.color }}
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full text-sm font-semibold text-ink-700"
+                  className=”inline-flex h-10 w-10 items-center justify-center rounded-full text-sm font-semibold text-ink-700”
                 >
                   {r.initials}
                 </span>
                 <div>
-                  <div className="text-sm font-semibold text-ink-900">
+                  <div className=”text-sm font-semibold text-white”>
                     {r.name}
                   </div>
-                  <div className="text-xs text-ink-500">{r.role}</div>
+                  <div className=”text-xs text-white/40”>{r.role}</div>
                 </div>
               </div>
             </article>

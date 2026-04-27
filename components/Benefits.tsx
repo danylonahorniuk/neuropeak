@@ -96,17 +96,17 @@ function MoleculeDecor() {
 
 export default function Benefits() {
   return (
-    <section id="benefits" className="section bg-surface">
+    <section id="benefits" className="section bg-ink-950">
       <div className="container-page">
         <FadeIn>
           <div className="flex flex-col items-start justify-between gap-4 lg:flex-row lg:items-end">
             <div className="max-w-2xl">
-              <span className="section-eyebrow">Переваги</span>
-              <h2 className="mt-3 section-title text-balance">
+              <span className="section-eyebrow !text-brand-400">Переваги</span>
+              <h2 className="mt-3 section-title text-balance !text-white">
                 Кілька причин, чому NeuroPeak працює на вас
               </h2>
             </div>
-            <p className="max-w-sm text-sm text-ink-500">
+            <p className="max-w-sm text-sm text-white/50">
               Ми оптимізували кожну інгредієнт, щоб ви могли працювати на межі
               своєї форми — без побічних ефектів різких стимулянтів.
             </p>
@@ -117,11 +117,11 @@ export default function Benefits() {
           {items.map((it, i) => (
             <FadeIn key={it.title} delay={i * 90}>
             <article
-              className={`group relative overflow-hidden rounded-2xl border border-ink-100 bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 ${it.borderHover} hover:shadow-cardHover h-full`}
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand-500/40 hover:bg-white/8 h-full"
             >
               {/* Top gradient band */}
               <div
-                className={`absolute inset-x-0 top-0 h-28 bg-gradient-to-b ${it.accent} opacity-70`}
+                className={`absolute inset-x-0 top-0 h-28 bg-gradient-to-b ${it.accent} opacity-10`}
                 aria-hidden
               />
 
@@ -139,22 +139,20 @@ export default function Benefits() {
 
               <div className="relative">
                 {/* Icon */}
-                <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white text-brand-700 shadow-soft ring-1 ring-ink-100">
+                <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-brand-400 ring-1 ring-white/10">
                   {it.icon}
                 </div>
 
-                <h3 className="mt-4 text-lg font-semibold text-ink-900">
+                <h3 className="mt-4 text-lg font-semibold text-white">
                   {it.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-500">
+                <p className="mt-2 text-sm leading-relaxed text-white/50">
                   {it.text}
                 </p>
 
                 {/* Ingredient tag */}
                 <div className="mt-5 flex items-center gap-1.5">
-                  <span
-                    className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-medium ring-1 ring-inset ${it.tagCls}`}
-                  >
+                  <span className="inline-flex items-center gap-1 rounded-full border border-brand-500/30 bg-brand-500/10 px-2.5 py-0.5 text-[11px] font-medium text-brand-400">
                     <span className="h-1 w-1 rounded-full bg-current opacity-70" />
                     {it.ingredient}
                   </span>
@@ -164,7 +162,7 @@ export default function Benefits() {
               {/* Bottom line on hover */}
               <div
                 aria-hidden
-                className="absolute inset-x-6 bottom-0 h-px scale-x-0 bg-gradient-to-r from-brand-300 to-transparent transition-transform duration-500 group-hover:scale-x-100"
+                className="absolute inset-x-6 bottom-0 h-px scale-x-0 bg-gradient-to-r from-brand-400 to-transparent transition-transform duration-500 group-hover:scale-x-100"
               />
             </article>
             </FadeIn>

@@ -6,7 +6,7 @@ const items = [
     text: "Допомагає утримувати увагу на завданнях — без дрейфу між вкладками та нотатками.",
     ingredient: "L-Theanine",
     topColor: "from-brand-200 via-brand-100/60 to-transparent",
-    cardBg: "bg-brand-50/80 border-brand-200/70",
+    cardBg: "bg-brand-50 border-brand-200",
     glowColor: "rgba(60,163,102,0.10)",
     iconBg: "bg-brand-200 ring-brand-300 text-brand-700",
     tagCls: "border-brand-300 bg-brand-100 text-brand-700",
@@ -24,7 +24,7 @@ const items = [
     text: "Нікого крешів і різких скачків. Плавна енергія, якої вистачає на весь робочий день.",
     ingredient: "Bacopa Monnieri",
     topColor: "from-amber-200 via-amber-100/60 to-transparent",
-    cardBg: "bg-amber-50/80 border-amber-200/70",
+    cardBg: "bg-amber-50 border-amber-200",
     glowColor: "rgba(245,158,11,0.10)",
     iconBg: "bg-amber-200 ring-amber-300 text-amber-700",
     tagCls: "border-amber-300 bg-amber-100 text-amber-700",
@@ -45,7 +45,7 @@ const items = [
     text: "Підтримує те відчуття, коли думки стають чіткими, а ви — впевненими у рішеннях.",
     ingredient: "Rhodiola Rosea",
     topColor: "from-sky-200 via-sky-100/60 to-transparent",
-    cardBg: "bg-sky-50/80 border-sky-200/70",
+    cardBg: "bg-sky-50 border-sky-200",
     glowColor: "rgba(56,189,248,0.10)",
     iconBg: "bg-sky-200 ring-sky-300 text-sky-700",
     tagCls: "border-sky-300 bg-sky-100 text-sky-700",
@@ -67,7 +67,7 @@ const items = [
     text: "Одна капсула зранку з їжею — і ви вже у робочому режимі. Без складних схем.",
     ingredient: "1 capsule / day",
     topColor: "from-violet-200 via-violet-100/60 to-transparent",
-    cardBg: "bg-violet-50/80 border-violet-200/70",
+    cardBg: "bg-violet-50 border-violet-200",
     glowColor: "rgba(167,139,250,0.10)",
     iconBg: "bg-violet-200 ring-violet-300 text-violet-700",
     tagCls: "border-violet-300 bg-violet-100 text-violet-700",
@@ -128,7 +128,7 @@ export default function Benefits() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((it, i) => (
             <FadeIn key={it.title} delay={i * 90}>
-              <article className={`group relative overflow-hidden rounded-2xl border p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md h-full backdrop-blur-sm ${it.cardBg}`}>
+              <article className={`group relative overflow-hidden rounded-2xl border p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md h-full ${it.cardBg}`}>
 
                 {/* Colored pastel top band */}
                 <div

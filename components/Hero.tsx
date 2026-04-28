@@ -84,17 +84,12 @@ export default function Hero() {
 
           {/* Main can — floats smoothly */}
           <div className="relative w-full max-w-[460px] animate-float">
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-brand-50 via-white to-mint-50 opacity-80" />
-            <div
-              className="absolute inset-0 rounded-3xl"
-              style={{ background: "radial-gradient(ellipse at center, transparent 55%, #f7fbf6 90%)" }}
-            />
             <Image
-              src="/Neuro-Peak.png"
+              src="/download-Photoroom.png"
               alt="NeuroPeak product"
               width={460}
               height={460}
-              className="relative w-full rounded-3xl mix-blend-multiply"
+              className="relative w-full"
               priority
             />
 

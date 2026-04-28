@@ -79,10 +79,11 @@ const config: Config = {
           "50%": { opacity: "1" },
         },
         shimmer: {
-          "0%":           { transform: "translateX(-100%) skewX(-15deg)", opacity: "0" },
-          "5%":           { opacity: "1" },
-          "20%":          { transform: "translateX(300%) skewX(-15deg)", opacity: "0" },
-          "20.01%, 100%": { transform: "translateX(-100%) skewX(-15deg)", opacity: "0" },
+          "0%":   { transform: "translateX(-150%) skewX(-15deg)", opacity: "0" },
+          "6%":   { opacity: "1" },
+          "28%":  { transform: "translateX(250%) skewX(-15deg)", opacity: "0" },
+          "29%":  { transform: "translateX(-150%) skewX(-15deg)", opacity: "0" },
+          "100%": { transform: "translateX(-150%) skewX(-15deg)", opacity: "0" },
         },
       },
       animation: {

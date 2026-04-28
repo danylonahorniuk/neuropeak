@@ -83,7 +83,7 @@ export default function Hero() {
           />
 
           {/* Main can — floats smoothly */}
-          <div className="relative w-full max-w-[460px] animate-float">
+          <div className="relative w-full max-w-[460px] animate-float overflow-hidden">
             {/* Shimmer overlay */}
             <div
               aria-hidden

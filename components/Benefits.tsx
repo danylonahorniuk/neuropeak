@@ -100,7 +100,7 @@ function MoleculeDecor({ className }: { className?: string }) {
 
 export default function Benefits() {
   return (
-    <section id="benefits" className="section bg-section-green">
+    <section id="benefits" className="section bg-gradient-to-br from-brand-500 to-brand-700">
       <div className="container-page">
         <FadeIn>
           <div className="flex flex-col items-start justify-between gap-4 lg:flex-row lg:items-end">

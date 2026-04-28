@@ -63,8 +63,6 @@ const config: Config = {
           "radial-gradient(120% 80% at 0% 0%, #e8f7ee 0%, rgba(232,247,238,0) 55%), radial-gradient(90% 70% at 100% 0%, #e4f3ea 0%, rgba(228,243,234,0) 55%), linear-gradient(180deg, #f7fbf6 0%, #ffffff 100%)",
         "dark-grid":
           "radial-gradient(1200px 400px at 50% -10%, rgba(60, 163, 102, 0.18), transparent 60%), linear-gradient(180deg, #0b1220 0%, #0a1220 100%)",
-        "section-green":
-          "radial-gradient(ellipse 80% 55% at 20% 10%, #4db87a 0%, transparent 55%), linear-gradient(135deg, #3aa464 0%, #267d49 60%, #1f6a3d 100%)",
       },
       keyframes: {
         fadeUp: {

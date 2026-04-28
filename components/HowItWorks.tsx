@@ -57,25 +57,41 @@ function DeliveryVisual() {
 
 function CapsuleDosageVisual() {
   return (
-    <div className="flex w-[140px] flex-col items-center gap-3 rounded-2xl border border-ink-100 bg-white px-4 py-4 shadow-card">
-      {/* Capsule */}
-      <div className="relative h-7 w-[80px] overflow-hidden rounded-full bg-gradient-to-r from-ink-800 to-ink-600 shadow-[0_4px_18px_rgba(15,23,42,0.22)] ring-1 ring-ink-900/10">
-        <div className="absolute inset-y-0 left-0 w-1/2 rounded-l-full bg-white/10" />
-        <div className="absolute inset-y-0 left-1/2 w-px bg-white/15" />
-        <div className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-t from-transparent to-white/[0.08]" />
-      </div>
-      {/* Count */}
-      <div className="flex items-baseline gap-1.5">
-        <span className="text-2xl font-extrabold leading-none text-ink-900">×1</span>
-        <span className="text-[9px] uppercase tracking-[0.18em] text-brand-600">на день</span>
-      </div>
-      {/* Tag */}
-      <div className="flex items-center gap-1.5 rounded-full border border-brand-100 bg-brand-50 px-2.5 py-1">
-        <svg viewBox="0 0 24 24" fill="none" className="h-3 w-3 text-brand-600" aria-hidden>
-          <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2" />
-          <path d="M12 7v5l3 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    <div className="w-[148px] rounded-2xl border border-ink-100 bg-white shadow-card overflow-hidden">
+      {/* Header */}
+      <div className="bg-brand-600 px-4 py-2.5 flex items-center gap-2">
+        <svg viewBox="0 0 24 24" fill="none" className="h-3.5 w-3.5 text-white/90" aria-hidden>
+          <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2"/>
+          <path d="M12 7v5l3 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
         </svg>
-        <span className="text-[9px] text-brand-700">Зранку з водою</span>
+        <span className="text-[9px] font-semibold uppercase tracking-[0.18em] text-white/90">Щоденний прийом</span>
+      </div>
+      {/* Body */}
+      <div className="px-4 py-3 space-y-2.5">
+        {/* Capsule row */}
+        <div className="flex items-center gap-2.5">
+          {/* Capsule illustration */}
+          <div className="relative h-5 w-10 flex-shrink-0 rounded-full bg-gradient-to-r from-brand-700 to-brand-500 shadow-sm ring-1 ring-brand-800/20">
+            <div className="absolute inset-y-0 left-1/2 w-px bg-white/30" />
+            <div className="absolute inset-0 rounded-full bg-gradient-to-t from-transparent to-white/10" />
+          </div>
+          <div className="flex items-baseline gap-1">
+            <span className="text-lg font-extrabold leading-none text-ink-900">×1</span>
+            <span className="text-[8px] uppercase tracking-widest text-ink-400">/ день</span>
+          </div>
+        </div>
+        {/* Divider */}
+        <div className="h-px bg-ink-100" />
+        {/* Time row */}
+        <div className="flex items-center gap-1.5">
+          <div className="flex h-4 w-4 items-center justify-center rounded-full bg-amber-100">
+            <svg viewBox="0 0 24 24" fill="none" className="h-2.5 w-2.5 text-amber-500" aria-hidden>
+              <circle cx="12" cy="12" r="4" fill="currentColor"/>
+              <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+            </svg>
+          </div>
+          <span className="text-[9px] text-ink-500">Зранку · з водою</span>
+        </div>
       </div>
     </div>
   );

@@ -70,8 +70,9 @@ const config: Config = {
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-6px)" },
+          "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
+          "33%":      { transform: "translateY(-10px) rotate(0.5deg)" },
+          "66%":      { transform: "translateY(-5px) rotate(-0.5deg)" },
         },
         pulseSoft: {
           "0%, 100%": { opacity: "0.6" },

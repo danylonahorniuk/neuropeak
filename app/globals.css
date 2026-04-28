@@ -87,3 +87,13 @@ body {
     text-wrap: pretty;
   }
 }
+
+/* Fix for screenshot tools and print — show all animated elements */
+@media print {
+  * {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}

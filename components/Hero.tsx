@@ -84,6 +84,14 @@ export default function Hero() {
 
           {/* Main can — floats smoothly */}
           <div className="relative w-full max-w-[460px] animate-float">
+            {/* Shimmer overlay */}
+            <div
+              aria-hidden
+              className="animate-shimmer pointer-events-none absolute inset-0 z-10"
+              style={{
+                background: "linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.55) 50%, transparent 65%)",
+              }}
+            />
             <Image
               src="/download-Photoroom.png"
               alt="NeuroPeak product"

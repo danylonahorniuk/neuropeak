@@ -78,11 +78,18 @@ const config: Config = {
           "0%, 100%": { opacity: "0.6" },
           "50%": { opacity: "1" },
         },
+        shimmer: {
+          "0%":           { transform: "translateX(-100%) skewX(-15deg)", opacity: "0" },
+          "5%":           { opacity: "1" },
+          "20%":          { transform: "translateX(300%) skewX(-15deg)", opacity: "0" },
+          "20.01%, 100%": { transform: "translateX(-100%) skewX(-15deg)", opacity: "0" },
+        },
       },
       animation: {
         fadeUp: "fadeUp 0.6s ease-out both",
         float: "float 6s ease-in-out infinite",
         pulseSoft: "pulseSoft 3s ease-in-out infinite",
+        shimmer: "shimmer 6s ease-in-out infinite",
       },
     },
   },

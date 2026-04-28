@@ -60,17 +60,17 @@ function Stars() {
 export default function Reviews() {
   return (
     <section id="reviews" className="section relative overflow-hidden" style={{ background: "linear-gradient(135deg, #5dd49a 0%, #38b870 40%, #239455 100%)" }}>
-      {/* Neon glow overlays */}
-      <div aria-hidden className="pointer-events-none absolute -top-32 right-0 h-96 w-96 rounded-full blur-3xl" style={{ background: "radial-gradient(circle, rgba(180,255,210,0.28) 0%, transparent 70%)" }} />
-      <div aria-hidden className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full blur-3xl" style={{ background: "radial-gradient(circle, rgba(100,255,170,0.15) 0%, transparent 70%)" }} />
+      {/* Subtle glow blobs */}
+      <div aria-hidden className="pointer-events-none absolute -top-32 right-0 h-96 w-96 rounded-full blur-3xl" style={{ background: "radial-gradient(circle, rgba(180,255,210,0.30) 0%, transparent 70%)" }} />
+      <div aria-hidden className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full blur-3xl" style={{ background: "radial-gradient(circle, rgba(100,255,170,0.18) 0%, transparent 70%)" }} />
 
       <div className="container-page relative">
         <FadeIn className="mx-auto max-w-2xl text-center">
-          <span className="section-eyebrow !text-brand-400">Відгуки</span>
+          <span className="section-eyebrow !text-white/70">Відгуки</span>
           <h2 className="mt-3 section-title text-balance !text-white">
             Справжні історії від наших користувачів
           </h2>
-          <p className="mt-4 text-pretty text-sm text-white/50 sm:text-base">
+          <p className="mt-4 text-pretty text-sm text-white/75 sm:text-base">
             Люди, які з першого погляду, обирають NeuroPeak.
           </p>
         </FadeIn>
@@ -78,12 +78,12 @@ export default function Reviews() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {reviews.map((r, i) => (
             <FadeIn key={r.name} delay={i * 70}>
-              <article className="flex flex-col h-full rounded-2xl border border-white/25 bg-white/15 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-white/40 hover:bg-white/20 backdrop-blur-sm">
+              <article className="flex flex-col h-full rounded-2xl border border-white/60 bg-white/90 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-md backdrop-blur-sm">
                 <Stars />
-                <p className="mt-4 flex-1 text-sm leading-relaxed text-white/70">
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-ink-700">
                   &ldquo;{r.text}&rdquo;
                 </p>
-                <div className="mt-5 flex items-center gap-3 border-t border-white/10 pt-4">
+                <div className="mt-5 flex items-center gap-3 border-t border-ink-100 pt-4">
                   <span
                     aria-hidden
                     style={{ background: r.color }}
@@ -92,8 +92,8 @@ export default function Reviews() {
                     {r.initials}
                   </span>
                   <div>
-                    <div className="text-sm font-semibold text-white">{r.name}</div>
-                    <div className="text-xs text-white/40">{r.role}</div>
+                    <div className="text-sm font-semibold text-ink-900">{r.name}</div>
+                    <div className="text-xs text-ink-500">{r.role}</div>
                   </div>
                 </div>
               </article>

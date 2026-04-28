@@ -5,10 +5,10 @@ const items = [
     title: "Глибокий фокус",
     text: "Допомагає утримувати увагу на завданнях — без дрейфу між вкладками та нотатками.",
     ingredient: "L-Theanine",
-    topColor: "from-brand-500/30 via-brand-500/10 to-transparent",
-    glowColor: "rgba(60,163,102,0.18)",
-    iconBg: "bg-brand-500/20 ring-brand-500/30 text-brand-400",
-    tagCls: "border-brand-500/30 bg-brand-500/10 text-brand-400",
+    topColor: "from-brand-100 to-transparent",
+    glowColor: "rgba(60,163,102,0.08)",
+    iconBg: "bg-brand-100 ring-brand-200 text-brand-600",
+    tagCls: "border-brand-200 bg-brand-50 text-brand-700",
     moleculeColor: "text-brand-400",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
@@ -22,10 +22,10 @@ const items = [
     title: "Стабільна енергія",
     text: "Нікого крешів і різких скачків. Плавна енергія, якої вистачає на весь робочий день.",
     ingredient: "Bacopa Monnieri",
-    topColor: "from-amber-500/30 via-amber-500/10 to-transparent",
-    glowColor: "rgba(245,158,11,0.15)",
-    iconBg: "bg-amber-500/20 ring-amber-500/30 text-amber-400",
-    tagCls: "border-amber-500/30 bg-amber-500/10 text-amber-400",
+    topColor: "from-amber-100 to-transparent",
+    glowColor: "rgba(245,158,11,0.08)",
+    iconBg: "bg-amber-100 ring-amber-200 text-amber-600",
+    tagCls: "border-amber-200 bg-amber-50 text-amber-700",
     moleculeColor: "text-amber-400",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
@@ -42,10 +42,10 @@ const items = [
     title: "Ясність мислення",
     text: "Підтримує те відчуття, коли думки стають чіткими, а ви — впевненими у рішеннях.",
     ingredient: "Rhodiola Rosea",
-    topColor: "from-sky-500/30 via-sky-500/10 to-transparent",
-    glowColor: "rgba(56,189,248,0.15)",
-    iconBg: "bg-sky-500/20 ring-sky-500/30 text-sky-400",
-    tagCls: "border-sky-500/30 bg-sky-500/10 text-sky-400",
+    topColor: "from-sky-100 to-transparent",
+    glowColor: "rgba(56,189,248,0.08)",
+    iconBg: "bg-sky-100 ring-sky-200 text-sky-600",
+    tagCls: "border-sky-200 bg-sky-50 text-sky-700",
     moleculeColor: "text-sky-400",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
@@ -63,10 +63,10 @@ const items = [
     title: "Щоденний формат",
     text: "Одна капсула зранку з їжею — і ви вже у робочому режимі. Без складних схем.",
     ingredient: "1 capsule / day",
-    topColor: "from-violet-500/30 via-violet-500/10 to-transparent",
-    glowColor: "rgba(167,139,250,0.15)",
-    iconBg: "bg-violet-500/20 ring-violet-500/30 text-violet-400",
-    tagCls: "border-violet-500/30 bg-violet-500/10 text-violet-400",
+    topColor: "from-violet-100 to-transparent",
+    glowColor: "rgba(167,139,250,0.08)",
+    iconBg: "bg-violet-100 ring-violet-200 text-violet-600",
+    tagCls: "border-violet-200 bg-violet-50 text-violet-700",
     moleculeColor: "text-violet-400",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
@@ -82,7 +82,7 @@ function MoleculeDecor({ className }: { className?: string }) {
     <svg
       viewBox="0 0 48 48"
       fill="none"
-      className={`absolute right-3 top-3 h-14 w-14 opacity-[0.18] ${className ?? ""}`}
+      className={`absolute right-3 top-3 h-14 w-14 opacity-30 ${className ?? ""}`}
       aria-hidden
     >
       <circle cx="24" cy="24" r="6" stroke="currentColor" strokeWidth="1.5" />
@@ -101,20 +101,20 @@ function MoleculeDecor({ className }: { className?: string }) {
 export default function Benefits() {
   return (
     <section id="benefits" className="section relative overflow-hidden" style={{ background: "linear-gradient(135deg, #5dd49a 0%, #38b870 40%, #239455 100%)" }}>
-      {/* Neon glow overlays */}
-      <div aria-hidden className="pointer-events-none absolute -top-32 -left-32 h-96 w-96 rounded-full blur-3xl" style={{ background: "radial-gradient(circle, rgba(180,255,210,0.28) 0%, transparent 70%)" }} />
-      <div aria-hidden className="pointer-events-none absolute -bottom-24 right-0 h-72 w-72 rounded-full blur-3xl" style={{ background: "radial-gradient(circle, rgba(100,255,170,0.15) 0%, transparent 70%)" }} />
+      {/* Subtle glow blobs */}
+      <div aria-hidden className="pointer-events-none absolute -top-32 -left-32 h-96 w-96 rounded-full blur-3xl" style={{ background: "radial-gradient(circle, rgba(180,255,210,0.30) 0%, transparent 70%)" }} />
+      <div aria-hidden className="pointer-events-none absolute -bottom-24 right-0 h-72 w-72 rounded-full blur-3xl" style={{ background: "radial-gradient(circle, rgba(100,255,170,0.18) 0%, transparent 70%)" }} />
 
       <div className="container-page relative">
         <FadeIn>
           <div className="flex flex-col items-start justify-between gap-4 lg:flex-row lg:items-end">
             <div className="max-w-2xl">
-              <span className="section-eyebrow !text-brand-400">Переваги</span>
+              <span className="section-eyebrow !text-white/70">Переваги</span>
               <h2 className="mt-3 section-title text-balance !text-white">
                 Кілька причин, чому NeuroPeak працює на вас
               </h2>
             </div>
-            <p className="max-w-sm text-sm text-white/50">
+            <p className="max-w-sm text-sm text-white/75">
               Ми оптимізували кожну інгредієнт, щоб ви могли працювати на межі
               своєї форми — без побічних ефектів різких стимулянтів.
             </p>
@@ -124,40 +124,36 @@ export default function Benefits() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((it, i) => (
             <FadeIn key={it.title} delay={i * 90}>
-              <article className="group relative overflow-hidden rounded-2xl border border-white/25 bg-white/15 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-white/40 hover:bg-white/20 h-full backdrop-blur-sm">
+              <article className="group relative overflow-hidden rounded-2xl border border-white/60 bg-white/90 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-md h-full backdrop-blur-sm">
 
-                {/* Colored top gradient band */}
+                {/* Colored pastel top band */}
                 <div
-                  className={`absolute inset-x-0 top-0 h-32 bg-gradient-to-b ${it.topColor}`}
+                  className={`absolute inset-x-0 top-0 h-28 bg-gradient-to-b ${it.topColor} opacity-100`}
                   aria-hidden
                 />
 
-                {/* Glow on hover */}
+                {/* Hover glow */}
                 <div
                   className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                  style={{
-                    background: `radial-gradient(ellipse at 50% 0%, ${it.glowColor} 0%, transparent 65%)`,
-                  }}
+                  style={{ background: `radial-gradient(ellipse at 50% 0%, ${it.glowColor} 0%, transparent 65%)` }}
                   aria-hidden
                 />
 
-                {/* Molecule decoration — colored per card */}
+                {/* Molecule decoration */}
                 <MoleculeDecor className={it.moleculeColor} />
 
                 <div className="relative">
-                  {/* Icon — unique color per card */}
                   <div className={`inline-flex h-11 w-11 items-center justify-center rounded-xl ring-1 ${it.iconBg}`}>
                     {it.icon}
                   </div>
 
-                  <h3 className="mt-4 text-lg font-semibold text-white">
+                  <h3 className="mt-4 text-lg font-semibold text-ink-900">
                     {it.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/50">
+                  <p className="mt-2 text-sm leading-relaxed text-ink-500">
                     {it.text}
                   </p>
 
-                  {/* Ingredient tag — colored per card */}
                   <div className="mt-5 flex items-center gap-1.5">
                     <span className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-0.5 text-[11px] font-medium ${it.tagCls}`}>
                       <span className="h-1 w-1 rounded-full bg-current opacity-70" />
@@ -165,12 +161,6 @@ export default function Benefits() {
                     </span>
                   </div>
                 </div>
-
-                {/* Bottom accent line on hover */}
-                <div
-                  aria-hidden
-                  className="absolute inset-x-6 bottom-0 h-px scale-x-0 bg-gradient-to-r from-current to-transparent transition-transform duration-500 group-hover:scale-x-100 opacity-40"
-                />
               </article>
             </FadeIn>
           ))}

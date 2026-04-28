@@ -98,56 +98,6 @@ export default function Hero() {
               priority
             />
 
-            {/* ── Floating ingredient badges ── */}
-
-            {/* Badge 1 — top right */}
-            <div
-              className="absolute -top-3 -right-8 z-10 animate-float hidden sm:flex"
-              style={{ animationDelay: "0.6s", animationDuration: "5.5s" }}
-              aria-hidden
-            >
-              <div className="flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 shadow-card ring-1 ring-brand-100 text-xs font-semibold text-brand-700">
-                <span className="h-2 w-2 rounded-full bg-brand-400" />
-                L-Theanine
-              </div>
-            </div>
-
-            {/* Badge 2 — left middle */}
-            <div
-              className="absolute top-1/3 -left-10 z-10 animate-float hidden sm:flex"
-              style={{ animationDelay: "1.2s", animationDuration: "6.5s" }}
-              aria-hidden
-            >
-              <div className="flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 shadow-card ring-1 ring-amber-100 text-xs font-semibold text-amber-700">
-                <span className="h-2 w-2 rounded-full bg-amber-400" />
-                Bacopa Monnieri
-              </div>
-            </div>
-
-            {/* Badge 3 — bottom right */}
-            <div
-              className="absolute -bottom-3 -right-6 z-10 animate-float hidden sm:flex"
-              style={{ animationDelay: "2s", animationDuration: "7s" }}
-              aria-hidden
-            >
-              <div className="flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 shadow-card ring-1 ring-sky-100 text-xs font-semibold text-sky-700">
-                <span className="h-2 w-2 rounded-full bg-sky-400" />
-                Rhodiola Rosea
-              </div>
-            </div>
-
-            {/* Badge 4 — left bottom */}
-            <div
-              className="absolute bottom-1/4 -left-8 z-10 animate-float hidden sm:flex"
-              style={{ animationDelay: "0s", animationDuration: "5s" }}
-              aria-hidden
-            >
-              <div className="flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 shadow-card ring-1 ring-violet-100 text-xs font-semibold text-violet-700">
-                <span className="h-2 w-2 rounded-full bg-violet-400" />
-                Rhodiola
-              </div>
-            </div>
-
             {/* Sparkle dots */}
             <div className="absolute top-10 left-12 h-2 w-2 rounded-full bg-brand-300 animate-pulseSoft opacity-70" style={{ animationDelay: "0.4s" }} aria-hidden />
             <div className="absolute top-1/2 right-6 h-1.5 w-1.5 rounded-full bg-mint-200 animate-pulseSoft opacity-80" style={{ animationDelay: "1.1s" }} aria-hidden />

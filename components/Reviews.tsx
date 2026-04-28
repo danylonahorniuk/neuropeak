@@ -59,7 +59,7 @@ function Stars() {
 
 export default function Reviews() {
   return (
-    <section id="reviews" className="section bg-ink-950">
+    <section id="reviews" className="section bg-section-dark">
       <div className="container-page">
         <FadeIn className="mx-auto max-w-2xl text-center">
           <span className="section-eyebrow !text-brand-400">Відгуки</span>

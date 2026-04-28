@@ -5,11 +5,12 @@ const items = [
     title: "Глибокий фокус",
     text: "Допомагає утримувати увагу на завданнях — без дрейфу між вкладками та нотатками.",
     ingredient: "L-Theanine",
-    topColor: "from-brand-100 to-transparent",
-    glowColor: "rgba(60,163,102,0.08)",
-    iconBg: "bg-brand-100 ring-brand-200 text-brand-600",
-    tagCls: "border-brand-200 bg-brand-50 text-brand-700",
-    moleculeColor: "text-brand-400",
+    topColor: "from-brand-200 via-brand-100/60 to-transparent",
+    cardBg: "bg-brand-50/80 border-brand-200/70",
+    glowColor: "rgba(60,163,102,0.10)",
+    iconBg: "bg-brand-200 ring-brand-300 text-brand-700",
+    tagCls: "border-brand-300 bg-brand-100 text-brand-700",
+    moleculeColor: "text-brand-500",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
         <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.8" />
@@ -22,11 +23,12 @@ const items = [
     title: "Стабільна енергія",
     text: "Нікого крешів і різких скачків. Плавна енергія, якої вистачає на весь робочий день.",
     ingredient: "Bacopa Monnieri",
-    topColor: "from-amber-100 to-transparent",
-    glowColor: "rgba(245,158,11,0.08)",
-    iconBg: "bg-amber-100 ring-amber-200 text-amber-600",
-    tagCls: "border-amber-200 bg-amber-50 text-amber-700",
-    moleculeColor: "text-amber-400",
+    topColor: "from-amber-200 via-amber-100/60 to-transparent",
+    cardBg: "bg-amber-50/80 border-amber-200/70",
+    glowColor: "rgba(245,158,11,0.10)",
+    iconBg: "bg-amber-200 ring-amber-300 text-amber-700",
+    tagCls: "border-amber-300 bg-amber-100 text-amber-700",
+    moleculeColor: "text-amber-500",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
         <path
@@ -42,11 +44,12 @@ const items = [
     title: "Ясність мислення",
     text: "Підтримує те відчуття, коли думки стають чіткими, а ви — впевненими у рішеннях.",
     ingredient: "Rhodiola Rosea",
-    topColor: "from-sky-100 to-transparent",
-    glowColor: "rgba(56,189,248,0.08)",
-    iconBg: "bg-sky-100 ring-sky-200 text-sky-600",
-    tagCls: "border-sky-200 bg-sky-50 text-sky-700",
-    moleculeColor: "text-sky-400",
+    topColor: "from-sky-200 via-sky-100/60 to-transparent",
+    cardBg: "bg-sky-50/80 border-sky-200/70",
+    glowColor: "rgba(56,189,248,0.10)",
+    iconBg: "bg-sky-200 ring-sky-300 text-sky-700",
+    tagCls: "border-sky-300 bg-sky-100 text-sky-700",
+    moleculeColor: "text-sky-500",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
         <path
@@ -63,11 +66,12 @@ const items = [
     title: "Щоденний формат",
     text: "Одна капсула зранку з їжею — і ви вже у робочому режимі. Без складних схем.",
     ingredient: "1 capsule / day",
-    topColor: "from-violet-100 to-transparent",
-    glowColor: "rgba(167,139,250,0.08)",
-    iconBg: "bg-violet-100 ring-violet-200 text-violet-600",
-    tagCls: "border-violet-200 bg-violet-50 text-violet-700",
-    moleculeColor: "text-violet-400",
+    topColor: "from-violet-200 via-violet-100/60 to-transparent",
+    cardBg: "bg-violet-50/80 border-violet-200/70",
+    glowColor: "rgba(167,139,250,0.10)",
+    iconBg: "bg-violet-200 ring-violet-300 text-violet-700",
+    tagCls: "border-violet-300 bg-violet-100 text-violet-700",
+    moleculeColor: "text-violet-500",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
         <rect x="3" y="8" width="18" height="8" rx="4" stroke="currentColor" strokeWidth="1.8" />
@@ -124,7 +128,7 @@ export default function Benefits() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((it, i) => (
             <FadeIn key={it.title} delay={i * 90}>
-              <article className="group relative overflow-hidden rounded-2xl border border-white/60 bg-white/90 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-md h-full backdrop-blur-sm">
+              <article className={`group relative overflow-hidden rounded-2xl border p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md h-full backdrop-blur-sm ${it.cardBg}`}>
 
                 {/* Colored pastel top band */}
                 <div

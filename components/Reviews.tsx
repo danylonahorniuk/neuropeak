@@ -59,7 +59,7 @@ function Stars() {
 
 export default function Reviews() {
   return (
-    <section id="reviews" className="section bg-section-dark">
+    <section id="reviews" className="section bg-section-green">
       <div className="container-page">
         <FadeIn className="mx-auto max-w-2xl text-center">
           <span className="section-eyebrow !text-brand-400">Відгуки</span>
@@ -74,7 +74,7 @@ export default function Reviews() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {reviews.map((r, i) => (
             <FadeIn key={r.name} delay={i * 70}>
-              <article className="flex flex-col h-full rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/8">
+              <article className="flex flex-col h-full rounded-2xl border border-white/25 bg-white/15 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-white/40 hover:bg-white/20 backdrop-blur-sm">
                 <Stars />
                 <p className="mt-4 flex-1 text-sm leading-relaxed text-white/70">
                   &ldquo;{r.text}&rdquo;

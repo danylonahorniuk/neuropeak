@@ -100,7 +100,7 @@ function MoleculeDecor({ className }: { className?: string }) {
 
 export default function Benefits() {
   return (
-    <section id="benefits" className="section bg-section-dark">
+    <section id="benefits" className="section bg-section-green">
       <div className="container-page">
         <FadeIn>
           <div className="flex flex-col items-start justify-between gap-4 lg:flex-row lg:items-end">
@@ -120,7 +120,7 @@ export default function Benefits() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((it, i) => (
             <FadeIn key={it.title} delay={i * 90}>
-              <article className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 h-full">
+              <article className="group relative overflow-hidden rounded-2xl border border-white/25 bg-white/15 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-white/40 hover:bg-white/20 h-full backdrop-blur-sm">
 
                 {/* Colored top gradient band */}
                 <div

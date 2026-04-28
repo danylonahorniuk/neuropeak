@@ -100,8 +100,12 @@ function MoleculeDecor({ className }: { className?: string }) {
 
 export default function Benefits() {
   return (
-    <section id="benefits" className="section bg-gradient-to-br from-brand-500 to-brand-700">
-      <div className="container-page">
+    <section id="benefits" className="section relative overflow-hidden" style={{ background: "linear-gradient(135deg, #5dd49a 0%, #38b870 40%, #239455 100%)" }}>
+      {/* Neon glow overlays */}
+      <div aria-hidden className="pointer-events-none absolute -top-32 -left-32 h-96 w-96 rounded-full blur-3xl" style={{ background: "radial-gradient(circle, rgba(180,255,210,0.28) 0%, transparent 70%)" }} />
+      <div aria-hidden className="pointer-events-none absolute -bottom-24 right-0 h-72 w-72 rounded-full blur-3xl" style={{ background: "radial-gradient(circle, rgba(100,255,170,0.15) 0%, transparent 70%)" }} />
+
+      <div className="container-page relative">
         <FadeIn>
           <div className="flex flex-col items-start justify-between gap-4 lg:flex-row lg:items-end">
             <div className="max-w-2xl">

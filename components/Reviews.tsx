@@ -59,8 +59,12 @@ function Stars() {
 
 export default function Reviews() {
   return (
-    <section id="reviews" className="section bg-gradient-to-br from-brand-500 to-brand-700">
-      <div className="container-page">
+    <section id="reviews" className="section relative overflow-hidden" style={{ background: "linear-gradient(135deg, #5dd49a 0%, #38b870 40%, #239455 100%)" }}>
+      {/* Neon glow overlays */}
+      <div aria-hidden className="pointer-events-none absolute -top-32 right-0 h-96 w-96 rounded-full blur-3xl" style={{ background: "radial-gradient(circle, rgba(180,255,210,0.28) 0%, transparent 70%)" }} />
+      <div aria-hidden className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full blur-3xl" style={{ background: "radial-gradient(circle, rgba(100,255,170,0.15) 0%, transparent 70%)" }} />
+
+      <div className="container-page relative">
         <FadeIn className="mx-auto max-w-2xl text-center">
           <span className="section-eyebrow !text-brand-400">Відгуки</span>
           <h2 className="mt-3 section-title text-balance !text-white">
